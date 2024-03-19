@@ -36,7 +36,7 @@ export function getAllTasks(): Task[] {
 
 // Function to retrieve tasks by assigned user
 export function getTasksByAssignedTo(username: string): Task[] {
-  return tasks.filter((task) => task.assignedTo === username);
+  return tasks.filter((task) => task.assignedTo.toLowerCase() === username.toLowerCase());
 }
 
 // Function to retrieve tasks by category

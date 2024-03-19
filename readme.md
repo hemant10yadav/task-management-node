@@ -13,7 +13,7 @@ This is a Task Management Application built with Node.js, TypeScript, and Expres
 
 Before running the application, ensure you have the following installed on your machine:
 
-- [Node.js](https://nodejs.org/): Download and install Node.js
+- [Node.js](https://nodejs.org/): Download and install Node.js 20.11.1
 - npm (Node Package Manager): Installed with Node.js
 
 ## Getting Started
