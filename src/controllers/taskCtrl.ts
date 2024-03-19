@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
-import * as taskService from "../services/taskService";
-import { Task } from "../utils/types";
-import { StatusCode } from "../utils/enums";
+import { Request, Response } from 'express';
+import * as taskService from '../services/taskService';
+import { Task } from '../utils/types';
+import { StatusCode } from '../utils/enums';
 
 // POST /task - Create a new task
 export const createTask = (req: Request, res: Response) => {
@@ -11,16 +11,16 @@ export const createTask = (req: Request, res: Response) => {
   if (!title || !dueDate || !assignedTo || !category) {
     return res.status(StatusCode.BAD_REQUEST).json({
       message:
-        "Please provide title, due date, assignedTo, and category for the task.",
+        'Please provide title, due date, assignedTo, and category for the task.',
     });
   }
 
   const newTask = new Task(
     title,
-    description || "",
+    description || '',
     new Date(dueDate),
     assignedTo,
-    category
+    category,
   );
 
   const createdTask = taskService.createTask(newTask);
@@ -36,7 +36,7 @@ export const getTaskById = (req: Request, res: Response) => {
   if (!foundTask) {
     return res
       .status(StatusCode.NOT_FOUND)
-      .json({ message: "Task not found." });
+      .json({ message: 'Task not found.' });
   }
 
   return res.json(foundTask);
@@ -50,7 +50,7 @@ export const updateTask = (req: Request, res: Response) => {
   if (!existingTask) {
     return res
       .status(StatusCode.NOT_FOUND)
-      .json({ message: "Task not found." });
+      .json({ message: 'Task not found.' });
   }
 
   const updatedTask: Task = {
@@ -67,7 +67,7 @@ export const updateTask = (req: Request, res: Response) => {
   } else {
     return res
       .status(StatusCode.INTERNAL_SERVER_ERROR)
-      .json({ message: "Failed to update task." });
+      .json({ message: 'Failed to update task.' });
   }
 };
 
@@ -75,7 +75,7 @@ export const updateTask = (req: Request, res: Response) => {
 export const deleteTask = (req: Request, res: Response) => {
   const taskId = req.params.id;
   taskService.deleteTask(taskId);
-  return res.json({ message: "Task deleted successfully." });
+  return res.json({ message: 'Task deleted successfully.' });
 };
 
 // GET /tasks - Retrieve all tasks

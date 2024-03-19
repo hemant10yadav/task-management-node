@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 
 export class Task {
   id: string;
@@ -15,15 +15,15 @@ export class Task {
     description: string,
     dueDate: Date,
     assignedTo: string,
-    category: string
+    category: string,
   ) {
     this.id = uuidv4();
     this.title = title;
-    this.description = description || "";
+    this.description = description || '';
     this.creationDate = new Date();
     this.dueDate = dueDate;
     this.assignedTo = assignedTo;
     this.category = category;
-    this.status = "Pending";
+    this.status = 'Pending';
   }
 }
