@@ -4,7 +4,10 @@ import * as taskController from "../../src/controllers/taskCtrl";
 import { Task } from "../../src/utils/types";
 import { StatusCode } from "../../src/utils/enums";
 
-jest.mock("../services/taskService");
+jest.mock("../../src/services/taskService");
+jest.mock('uuid', () => ({
+  v4: jest.fn().mockReturnValue('6cd9f906-2a35-45ab-b93a-972c99a215cc'), // Mock UUID value
+}));
 
 describe("Task Controller", () => {
   const req = {} as Request;
@@ -17,6 +20,7 @@ describe("Task Controller", () => {
     jest.clearAllMocks();
   });
 
+
   describe("createTask", () => {
     test("should create a new task", () => {
       const requestBody = {
@@ -27,21 +31,19 @@ describe("Task Controller", () => {
         category: "Category",
       };
 
-      const createdTask: Task = {
-        id: "1",
-        title: requestBody.title,
-        description: requestBody.description,
-        creationDate: new Date(),
-        dueDate: requestBody.dueDate,
-        assignedTo: requestBody.assignedTo,
-        category: requestBody.category,
-        status: "Pending",
-      };
+      const createdTask: Task = new Task(
+        requestBody.title,
+        requestBody.description,
+        requestBody.dueDate,
+        requestBody.assignedTo,
+        requestBody.category
+      );
 
       const mockRequest = { body: requestBody } as Request;
 
       const expectedResult = createdTask;
-      (taskService.createTask as jest.Mock).mockReturnValue(expectedResult);
+      (taskService.createTask as jest.Mock).mockReturnValueOnce(expectedResult);
+      
 
       taskController.createTask(mockRequest, res);
 
