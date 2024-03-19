@@ -70,60 +70,49 @@ Creates a new task with the provided details.
   "category": "Category"
 }
 
-## Responses
-
-### Create a Task
-
-- **Status Code:** 201 Created
-- **Response Body:** Details of the created task.
-
-### Get a Task
-
+Response
+Status Code: 201 Created
+Response Body: Details of the created task.
+2. Get a Task
 Retrieves details of a specific task identified by its ID.
 
-- **Path:** `GET /tasks/:id`
-- **Path Parameters:**
-  - `id` (string, required): Unique identifier of the task.
-- **Status Code:** 200 OK
-- **Response Body:** Details of the task.
-
-### Update a Task
-
+Path Parameters
+id (string, required): Unique identifier of the task.
+Response
+Status Code: 200 OK
+Response Body: Details of the task.
+3. Update a Task
 Updates details of a specific task identified by its ID.
 
-- **Path:** `PUT /tasks/:id`
-- **Path Parameters:**
-  - `id` (string, required): Unique identifier of the task.
-- **Request Body:** Same as the request body for creating a task.
-- **Status Code:** 200 OK
-- **Response Body:** Updated details of the task.
+Path Parameters
+id (string, required): Unique identifier of the task.
+Request Body
+Same as the request body for creating a task.
 
-### Delete a Task
-
+Response
+Status Code: 200 OK
+Response Body: Updated details of the task.
+4. Delete a Task
 Deletes a specific task identified by its ID.
 
-- **Path:** `DELETE /tasks/:id`
-- **Path Parameters:**
-  - `id` (string, required): Unique identifier of the task.
-- **Status Code:** 200 OK
-- **Response Body:** Message confirming the deletion of the task.
-
-### Get Tasks by Assigned User
-
+Path Parameters
+id (string, required): Unique identifier of the task.
+Response
+Status Code: 200 OK
+Response Body: Message confirming the deletion of the task.
+5. Get Tasks by Assigned User
 Retrieves all tasks assigned to a specific user.
 
-- **Path:** `GET /tasks?assignedTo=:username`
-- **Query Parameters:**
-  - `assignedTo` (string, required): Username of the assigned user.
-- **Status Code:** 200 OK
-- **Response Body:** List of tasks assigned to the specified user.
-
-### Get Tasks by Category
-
+Query Parameters
+assignedTo (string, required): Username of the assigned user.
+Response
+Status Code: 200 OK
+Response Body: List of tasks assigned to the specified user.
+6. Get Tasks by Category
 Retrieves all tasks under a specific category.
 
-- **Path:** `GET /tasks?category=:categoryName`
-- **Query Parameters:**
-  - `category` (string, required): Name of the category.
-- **Status Code:** 200 OK
-- **Response Body:** List of tasks under the specified category.
+Query Parameters
+category (string, required): Name of the category.
+Response
+Status Code: 200 OK
+Response Body: List of tasks under the specified category.
