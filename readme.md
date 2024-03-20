@@ -59,60 +59,86 @@ Creates a new task with the provided details.
 - `assignedTo` (string, required): Username of the user to whom the task is assigned.
 - `category` (string, required): Category of the task.
 
-#### Example Request
+## Endpoints
+
+### 1. Create a Task
+
+Creates a new task.
+
+- **URL:** `/tasks`
+- **Method:** `POST`
+- **Request Body:**
 
 ```json
 {
-  "title": "Task Title",
-  "description": "Task Description",
-  "dueDate": "2024-03-19",
+   "title": "Task Title",
+   "description": "Task Description",
+   "dueDate": "2024-03-19",
+   "assignedTo": "User",
+   "category": "Category"
+}
+```
+
+### 2. Get a Task
+
+Creates a new task.
+
+- **URL:** `/tasks/{id}`
+- **Method:** `GET`
+- **Path Parameters:** 
+- `id` (string, required): Unique identifier of the task.
+
+
+### 3.Update a Task
+
+Creates a new task.
+
+- **URL:** `/tasks/{id}`
+- **Method:** `PUT`
+- **Path Parameters:**
+- `id` (string, required): Unique identifier of the task.
+- **Request Body:**
+
+```json
+{
+  "title": "Updated Task Title",
+  "description": "Updated Task Description",
+  "dueDate": "2024-03-20",
   "assignedTo": "User",
   "category": "Category"
 }
+```
 
-Response
-Status Code: 201 Created
-Response Body: Details of the created task.
-2. Get a Task
-Retrieves details of a specific task identified by its ID.
+### 4.Delete a Task
 
-Path Parameters
-id (string, required): Unique identifier of the task.
-Response
-Status Code: 200 OK
-Response Body: Details of the task.
-3. Update a Task
-Updates details of a specific task identified by its ID.
+- **URL:** `/tasks/{id}`
+- **Method:** `DELETE`
+- **Path Parameters:**
+- `id` (string, required): Unique identifier of the task.
 
-Path Parameters
-id (string, required): Unique identifier of the task.
-Request Body
-Same as the request body for creating a task.
 
-Response
-Status Code: 200 OK
-Response Body: Updated details of the task.
-4. Delete a Task
-Deletes a specific task identified by its ID.
 
-Path Parameters
-id (string, required): Unique identifier of the task.
-Response
-Status Code: 200 OK
-Response Body: Message confirming the deletion of the task.
-5. Get Tasks by Assigned User
-Retrieves all tasks assigned to a specific user.
+### 5.Get Tasks by Assigned User
 
-Query Parameters
-assignedTo (string, required): Username of the assigned user.
-Response
-Status Code: 200 OK
-Response Body: List of tasks assigned to the specified user.
-6. Get Tasks by Category
-Retrieves all tasks under a specific category.
+- **URL:** `/tasks?assignedTo=User`
+- **Method:** `GET`
+- **Path Parameters:**
+- `assignedTo ` (string, required): Username of the assigned user.
 
-Query Parameters
-category (string, required): Name of the category.
-Response
-Status Code: 200 OK
-Response Body: List of tasks under the specified category.
+### 6.Get Tasks by Assigned User
+
+- **URL:** `/tasks?category=Category`
+- **Method:** `GET`
+- **Path Parameters:**
+- `category` (string, required): Name of the category.
+
+
+
+
+
+
+
+# Developer
+## Hemant Singh Yadav
+[Portfolio](https://hemant10yadav.github.io/)
+
