@@ -1,6 +1,7 @@
 import express, { Request, Response, Application } from 'express';
 import dotenv from 'dotenv';
 import taskRoute from './routes/taskRoute';
+import authRoute from './routes/authRoute';
 import bodyParser from 'body-parser';
 import { errorHandler } from './middleware/errorHandler';
 
@@ -12,7 +13,9 @@ const port = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 
+app.use(authRoute);
 app.use(taskRoute);
+
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to Express & TypeScript Server');

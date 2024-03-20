@@ -10,7 +10,7 @@ export class Task {
   category: string;
   status: string;
 
-  constructor(
+  constructor (
     title: string,
     description: string,
     dueDate: Date,
@@ -27,3 +27,16 @@ export class Task {
     this.status = 'Pending';
   }
 }
+
+export class User {
+  id: string;
+  username: string;
+  password: string;
+  constructor (username: string, password: string) {
+    this.id = uuidv4();
+    this.username = username;
+    this.password = password;
+  }
+
+}
+
