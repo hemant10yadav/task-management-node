@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/src/app.js",
+    "start": "npm run build && node dist/app.js",
     "dev": "nodemon src/app.ts",
     "test": "jest"
   },

@@ -126,15 +126,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/tasks/id",
+					"raw": "http://localhost:3000/task/9ebfbbea-d109-4168-bfbb-c524f9e63402",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"tasks",
-						"id"
+						"task",
+						"9ebfbbea-d109-4168-bfbb-c524f9e63402"
 					]
 				}
 			},
@@ -155,14 +155,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/tasks/id",
+					"raw": "http://localhost:3000/task/id",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"tasks",
+						"task",
 						"id"
 					]
 				}
@@ -175,14 +175,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/tasks/id",
+					"raw": "http://localhost:3000/task/id",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"tasks",
+						"task",
 						"id"
 					]
 				}

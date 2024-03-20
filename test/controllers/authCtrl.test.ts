@@ -70,6 +70,7 @@ describe('Auth Controller', () => {
   // Test suite for loginUser endpoint
   describe('loginUser', () => {
     test('should return JWT token for valid user credentials', () => {
+      process.env.JWT_SECRET = 'test_secret';
       // Define request body
       const requestBody = {
         username: 'testuser',

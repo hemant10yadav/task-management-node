@@ -86,7 +86,7 @@ Creates a new task.
 
 Creates a new task.
 
-- **URL:** `/tasks/{id}`
+- **URL:** `/task/{id}`
 - **Method:** `GET`
 - **Path Parameters:**
 - `id` (string, required): Unique identifier of the task.
@@ -95,7 +95,7 @@ Creates a new task.
 
 Creates a new task.
 
-- **URL:** `/tasks/{id}`
+- **URL:** `/task/{id}`
 - **Method:** `PUT`
 - **Path Parameters:**
 - `id` (string, required): Unique identifier of the task.
@@ -113,7 +113,7 @@ Creates a new task.
 
 ### 4.Delete a Task
 
-- **URL:** `/tasks/{id}`
+- **URL:** `/task/{id}`
 - **Method:** `DELETE`
 - **Path Parameters:**
 - `id` (string, required): Unique identifier of the task.
